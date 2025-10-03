@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d1ff28f-62bb-4710-919c-2afaccd1a525" name="Changes" comment="Initialize template plugin with basic project structure and default configurations">
-      <change afterPath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/id/Identifiable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/id/Identifier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/id/IntegerId.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/id/LongId.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/id/UniqueId.java" afterDir="false" />
+    <list default="true" id="1d1ff28f-62bb-4710-919c-2afaccd1a525" name="Changes" comment="Adding Common with Identifier.java and more usefully stuff">
+      <change beforePath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/id/Identifiable.java" beforeDir="false" afterPath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/id/Identifiable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/id/Identifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/id/Identifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/id/IntegerId.java" beforeDir="false" afterPath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/id/IntegerId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/id/LongId.java" beforeDir="false" afterPath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/id/LongId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/id/UniqueId.java" beforeDir="false" afterPath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/id/UniqueId.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +79,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/LocalLibrary/projects/public/rubrion/template/rup-velocity",
@@ -124,7 +124,23 @@
       <option name="project" value="LOCAL" />
       <updated>1759500591065</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Adding Common with Identifier.java and more usefully stuff">
+      <option name="closed" value="true" />
+      <created>1759527122804</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1759527122804</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Adding Common with Identifier.java and more usefully stuff">
+      <option name="closed" value="true" />
+      <created>1759527331225</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1759527331225</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -152,6 +168,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initialize template plugin with basic project structure and default configurations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initialize template plugin with basic project structure and default configurations" />
+    <MESSAGE value="Adding Common with Identifier.java and more usefully stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding Common with Identifier.java and more usefully stuff" />
   </component>
 </project>
