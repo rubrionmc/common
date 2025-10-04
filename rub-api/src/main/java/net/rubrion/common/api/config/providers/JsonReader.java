@@ -11,40 +11,44 @@
 package net.rubrion.common.api.config.providers;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import net.rubrion.common.api.config.ConfigReader;
+import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
-import java.io.FileReader;
+import java.io.*;
 import java.lang.reflect.Type;
+import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Configuration file reader implementation for JSON files.
- * Uses Gson library for parsing JSON format.
- *
- * @see ConfigReader
+ * ConfigReader implementation for JSON files using Gson.
  */
 public class JsonReader implements ConfigReader {
 
-    private static final Gson GSON = new Gson();
+    private static final Gson GSON = new GsonBuilder()
+            .setPrettyPrinting()
+            .create();
+
     private static final Type MAP_TYPE = new TypeToken<Map<String, Object>>(){}.getType();
 
-    /**
-     * Loads and parses a JSON configuration file.
-     *
-     * @param file the JSON file to load (must not be null)
-     * @return a map containing all configuration key-value pairs from the file
-     * @throws RuntimeException if the file cannot be read or contains invalid JSON
-     */
     @Override
-    public Map<String, Object> load(File file) {
-        try (FileReader reader = new FileReader(file)) {
-            return GSON.fromJson(reader, MAP_TYPE);
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to load JSON file: " + file.getName(), e);
+    public @NotNull Map<String, Object> load(@NotNull File file) {
+        try (Reader reader = new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8)) {
+            Map<String, Object> data = GSON.fromJson(reader, MAP_TYPE);
+            return data != null ? data : new HashMap<>();
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to load JSON file: " + file.getPath(), e);
+        }
+    }
+
+    @Override
+    public void save(@NotNull File file, @NotNull Map<String, Object> data) {
+        try (Writer writer = new OutputStreamWriter(new FileOutputStream(file), StandardCharsets.UTF_8)) {
+            GSON.toJson(data, writer);
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to save JSON file: " + file.getPath(), e);
         }
     }
 }
-
-

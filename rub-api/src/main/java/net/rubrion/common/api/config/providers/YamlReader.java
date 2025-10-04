@@ -11,36 +11,42 @@
 package net.rubrion.common.api.config.providers;
 
 import net.rubrion.common.api.config.ConfigReader;
+import org.jetbrains.annotations.NotNull;
 import org.yaml.snakeyaml.Yaml;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
 import java.util.Map;
 
-
 /**
- * Configuration file reader implementation for YAML files.
- * Uses SnakeYAML library for parsing YAML format.
- *
- * @see ConfigReader
+ * ConfigReader implementation for YAML files using SnakeYAML.
  */
 public class YamlReader implements ConfigReader {
 
-    /**
-     * Loads and parses a YAML configuration file.
-     *
-     * @param file the YAML file to load (must not be null)
-     * @return a map containing all configuration key-value pairs from the file
-     * @throws RuntimeException if the file cannot be read or contains invalid YAML
-     */
+    private static final Yaml YAML = new Yaml();
+
     @Override
-    public Map<String, Object> load(File file) {
-        try (FileInputStream in = new FileInputStream(file)) {
-            return new Yaml().load(in);
+    public @NotNull Map<String, Object> load(@NotNull File file) {
+        try (Reader reader = new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8)) {
+            Object data = YAML.load(reader);
+            if (data instanceof Map) {
+                @SuppressWarnings("unchecked")
+                Map<String, Object> map = (Map<String, Object>) data;
+                return map;
+            }
+            return new HashMap<>();
         } catch (IOException e) {
-            throw new RuntimeException("Failed to read YAML: " + file, e);
+            throw new RuntimeException("Failed to load YAML file: " + file.getPath(), e);
+        }
+    }
+
+    @Override
+    public void save(@NotNull File file, @NotNull Map<String, Object> data) {
+        try (Writer writer = new OutputStreamWriter(new FileOutputStream(file), StandardCharsets.UTF_8)) {
+            YAML.dump(data, writer);
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to save YAML file: " + file.getPath(), e);
         }
     }
 }
-

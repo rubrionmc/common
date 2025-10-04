@@ -10,11 +10,30 @@
  */
 package net.rubrion.common.api.config;
 
+import org.jetbrains.annotations.NotNull;
 import java.io.File;
 import java.util.Map;
 
-
+/**
+ * Interface for configuration file readers that can load and save configuration data.
+ */
 public interface ConfigReader {
-    Map<String, Object> load(File file);
-}
 
+    /**
+     * Loads configuration data from a file.
+     *
+     * @param file the configuration file to load
+     * @return a map containing the configuration data
+     * @throws RuntimeException if the file cannot be read or parsed
+     */
+    @NotNull Map<String, Object> load(@NotNull File file);
+
+    /**
+     * Saves configuration data to a file.
+     *
+     * @param file the configuration file to save to
+     * @param data the configuration data to save
+     * @throws RuntimeException if the file cannot be written
+     */
+    void save(@NotNull File file, @NotNull Map<String, Object> data);
+}

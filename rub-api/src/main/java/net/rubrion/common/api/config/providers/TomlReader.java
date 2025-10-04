@@ -11,29 +11,38 @@
 package net.rubrion.common.api.config.providers;
 
 import com.moandjiezana.toml.Toml;
+import com.moandjiezana.toml.TomlWriter;
 import net.rubrion.common.api.config.ConfigReader;
+import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
+import java.io.*;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Configuration file reader implementation for TOML files.
- * Uses Toml4J library for parsing TOML format.
- *
- * @see ConfigReader
+ * ConfigReader implementation for TOML files using toml4j.
  */
 public class TomlReader implements ConfigReader {
 
-    /**
-     * Loads and parses a TOML configuration file.
-     *
-     * @param file the TOML file to load (must not be null)
-     * @return a map containing all configuration key-value pairs from the file
-     * @throws RuntimeException if the file cannot be read or contains invalid TOML
-     */
+    private static final TomlWriter TOML_WRITER = new TomlWriter();
+
     @Override
-    public Map<String, Object> load(File file) {
-        return new Toml().read(file).toMap();
+    public @NotNull Map<String, Object> load(@NotNull File file) {
+        try {
+            Toml toml = new Toml().read(file);
+            Map<String, Object> data = toml.toMap();
+            return data != null ? data : new HashMap<>();
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to load TOML file: " + file.getPath(), e);
+        }
+    }
+
+    @Override
+    public void save(@NotNull File file, @NotNull Map<String, Object> data) {
+        try (Writer writer = new FileWriter(file)) {
+            TOML_WRITER.write(data, writer);
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to save TOML file: " + file.getPath(), e);
+        }
     }
 }
-
