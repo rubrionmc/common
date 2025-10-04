@@ -18,8 +18,22 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Map;
 
+
+/**
+ * Configuration file reader implementation for YAML files.
+ * Uses SnakeYAML library for parsing YAML format.
+ *
+ * @see ConfigReader
+ */
 public class YamlReader implements ConfigReader {
 
+    /**
+     * Loads and parses a YAML configuration file.
+     *
+     * @param file the YAML file to load (must not be null)
+     * @return a map containing all configuration key-value pairs from the file
+     * @throws RuntimeException if the file cannot be read or contains invalid YAML
+     */
     @Override
     public Map<String, Object> load(File file) {
         try (FileInputStream in = new FileInputStream(file)) {

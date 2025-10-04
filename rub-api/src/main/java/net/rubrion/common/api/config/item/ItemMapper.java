@@ -16,8 +16,28 @@ import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Utility class for mapping configuration data to Java objects and vice versa.
+ * Uses reflection and {@link ItemKey} annotations to map fields to configuration keys.
+ *
+ * <p>This mapper supports automatic type conversion for common primitive types
+ * and their wrapper classes.</p>
+ *
+ * @see ItemKey
+ * @see Item
+ */
 public class ItemMapper {
 
+    /**
+     * Maps configuration data to an instance of the specified class.
+     * Fields annotated with {@link ItemKey} will be populated from the data map.
+     *
+     * @param <T> the type of object to create
+     * @param clazz the class to instantiate and populate
+     * @param data the configuration data map
+     * @return a new instance of clazz with fields populated from the data map
+     * @throws RuntimeException if instantiation fails or field access is denied
+     */
     public static <T> @NotNull T load(Class<T> clazz, Map<String, Object> data) {
         try {
             T instance = clazz.getDeclaredConstructor().newInstance();
@@ -38,6 +58,14 @@ public class ItemMapper {
         }
     }
 
+    /**
+     * Converts an object to a configuration data map.
+     * Fields annotated with {@link ItemKey} will be included in the output map.
+     *
+     * @param obj the object to convert to a map
+     * @return a map containing the object's annotated field values
+     * @throws RuntimeException if field access is denied
+     */
     public static @NotNull Map<String, Object> unload(Object obj) {
         Map<String, Object> data = new HashMap<>();
         try {
@@ -55,6 +83,14 @@ public class ItemMapper {
         return data;
     }
 
+    /**
+     * Converts a value to the target type.
+     * Supports automatic conversion between Number types and common primitives.
+     *
+     * @param target the target type to convert to
+     * @param value the value to convert
+     * @return the converted value
+     */
     private static Object convert(@NotNull Class<?> target, @NotNull Object value) {
         if (target.isAssignableFrom(value.getClass())) return value;
         if (target == int.class || target == Integer.class) return ((Number) value).intValue();

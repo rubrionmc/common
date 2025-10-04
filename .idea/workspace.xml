@@ -4,18 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d1ff28f-62bb-4710-919c-2afaccd1a525" name="Changes" comment="Adding LICENSE NOTICE to all files">
-      <change afterPath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/config/ConfigReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/config/item/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/config/item/ItemKey.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/config/item/ItemMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/config/providers/JsonReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/config/providers/TomlReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/config/providers/YamlReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/config/setting/Setting.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/config/setting/SettingProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/libs.versions.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rub-api/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/rub-api/build.gradle.kts" afterDir="false" />
+    <list default="true" id="1d1ff28f-62bb-4710-919c-2afaccd1a525" name="Changes" comment="Adding Settings and Config Stuff">
+      <change beforePath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/config/ConfigReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/config/ConfigReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/config/item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/config/item/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/config/item/ItemKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/config/item/ItemKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/config/item/ItemMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/config/item/ItemMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/config/providers/JsonReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/config/providers/JsonReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/config/providers/TomlReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/config/providers/TomlReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/config/providers/YamlReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/config/providers/YamlReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/config/setting/Setting.java" beforeDir="false" afterPath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/config/setting/Setting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/config/setting/SettingProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/rub-api/src/main/java/net/rubrion/common/api/config/setting/SettingProvider.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +152,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759527432192</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Adding Settings and Config Stuff">
+      <option name="closed" value="true" />
+      <created>1759566647398</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1759566647398</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -184,6 +190,7 @@
     <MESSAGE value="Initialize template plugin with basic project structure and default configurations" />
     <MESSAGE value="Adding Common with Identifier.java and more usefully stuff" />
     <MESSAGE value="Adding LICENSE NOTICE to all files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding LICENSE NOTICE to all files" />
+    <MESSAGE value="Adding Settings and Config Stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding Settings and Config Stuff" />
   </component>
 </project>

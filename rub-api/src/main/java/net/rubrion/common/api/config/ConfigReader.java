@@ -13,6 +13,7 @@ package net.rubrion.common.api.config;
 import java.io.File;
 import java.util.Map;
 
+
 public interface ConfigReader {
     Map<String, Object> load(File file);
 }
