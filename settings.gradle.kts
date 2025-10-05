@@ -16,7 +16,6 @@ pluginManagement {
 
 rootProject.name = "rub-common"
 
-include("api", "common")
+include("api")
 
 project(":api").projectDir = file("rub-api")
-project(":common").projectDir = file("rub-common")
