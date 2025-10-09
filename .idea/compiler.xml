@@ -9,8 +9,6 @@
         </processorPath>
         <module name="rub-common.api.test" />
         <module name="rub-common.api.main" />
-        <module name="rub-common.common.test" />
-        <module name="rub-common.common.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="21" />

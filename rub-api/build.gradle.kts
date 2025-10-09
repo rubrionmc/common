@@ -1,4 +1,6 @@
 dependencies {
     compileOnly(libs.jetanno)
-    implementation(libs.bundles.config)
+    compileOnly(libs.bundles.adventure)
+    compileOnly(libs.bundles.config)
+    compileOnly(libs.slf4j)
 }
