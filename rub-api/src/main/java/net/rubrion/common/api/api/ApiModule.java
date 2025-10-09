@@ -11,7 +11,9 @@
 package net.rubrion.common.api.api;
 
 import net.rubrion.common.api.id.NamespacedId;
+import org.slf4j.Logger;
 
 public interface ApiModule {
     NamespacedId loader();
+    Logger logger();
 }
