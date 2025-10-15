@@ -10,4 +10,13 @@
  */
 package net.rubrion.common.api.api;
 
-public interface ApiProvider {}
+/**
+ * Main interface for API providers in the Rubrion framework.
+ * Implement this interface to provide API functionality that can be
+ * discovered and used by other modules and plugins.
+ *
+ * @author LeyCM
+ * @since 1.1.2
+ * @see ApiModule
+ */
+public interface ApiProvider { }

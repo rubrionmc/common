@@ -14,18 +14,22 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents an identifier backed by a {@link String}.
- * <p>
  * Implements {@link CharSequence} to behave like a standard string
  * and {@link Identifier} for a typed ID abstraction.
+ *
+ * @author LeyCM
+ * @see Identifier
+ * @see CharSequence
+ * @since 1.0.0
  */
-public class StringId implements CharSequence, Identifier<String> {
-    private final String value;
-
+public record StringId(String value) implements CharSequence, Identifier<String> {
     /**
      * Creates a new {@link StringId} with the given string value.
      *
      * @param value the string backing this identifier
      * @throws IllegalArgumentException if value is null
+     * @author LeyCM
+     * @since 1.0.0
      */
     @SuppressWarnings("ConstantValue")
     public StringId(@NotNull String value) {
@@ -37,6 +41,9 @@ public class StringId implements CharSequence, Identifier<String> {
      * Returns the original string value of this identifier.
      *
      * @return the original string
+     * @author LeyCM
+     * @see Identifier#original()
+     * @since 1.0.0
      */
     @Override
     public String original() {
@@ -47,6 +54,9 @@ public class StringId implements CharSequence, Identifier<String> {
      * Returns the length of the string identifier.
      *
      * @return the length of the string
+     * @author LeyCM
+     * @see CharSequence#length()
+     * @since 1.0.0
      */
     @Override
     public int length() {
@@ -59,6 +69,9 @@ public class StringId implements CharSequence, Identifier<String> {
      * @param index the index of the character
      * @return the character at the specified index
      * @throws IndexOutOfBoundsException if the index is out of range
+     * @author LeyCM
+     * @see CharSequence#charAt(int)
+     * @since 1.0.0
      */
     @Override
     public char charAt(int index) {
@@ -72,6 +85,9 @@ public class StringId implements CharSequence, Identifier<String> {
      * @param end   the end index, exclusive
      * @return a subsequence of the string
      * @throws IndexOutOfBoundsException if start or end are invalid
+     * @author LeyCM
+     * @see CharSequence#subSequence(int, int)
+     * @since 1.0.0
      */
     @Override
     public @NotNull CharSequence subSequence(int start, int end) {
@@ -82,6 +98,9 @@ public class StringId implements CharSequence, Identifier<String> {
      * Returns the string representation of this identifier.
      *
      * @return the string value
+     * @author LeyCM
+     * @see Object#toString()
+     * @since 1.0.0
      */
     @Override
     public @NotNull String toString() {
@@ -94,6 +113,10 @@ public class StringId implements CharSequence, Identifier<String> {
      * @param o the string to compare to
      * @return a negative integer, zero, or a positive integer as this identifier
      * is less than, equal to, or greater than the specified string
+     * @throws NullPointerException if the specified string is null
+     * @author LeyCM
+     * @see Comparable#compareTo(Object)
+     * @since 1.0.0
      */
     @Override
     public int compareTo(@NotNull String o) {
@@ -105,6 +128,9 @@ public class StringId implements CharSequence, Identifier<String> {
      *
      * @param obj the object to compare
      * @return true if the other object is a StringId with the same value
+     * @author LeyCM
+     * @see Object#equals(Object)
+     * @since 1.0.0
      */
     @Override
     public boolean equals(Object obj) {
@@ -113,13 +139,4 @@ public class StringId implements CharSequence, Identifier<String> {
         return value.equals(other.value);
     }
 
-    /**
-     * Returns the hash code of the string value.
-     *
-     * @return hash code
-     */
-    @Override
-    public int hashCode() {
-        return value.hashCode();
-    }
 }

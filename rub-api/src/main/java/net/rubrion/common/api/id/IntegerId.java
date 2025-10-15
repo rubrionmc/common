@@ -18,10 +18,10 @@ import org.jetbrains.annotations.NotNull;
  * {@link Number} for numeric operations.
  *
  * @author LeyCM
- * @version 1.0.0
  * @since 1.0.0
  * @see Identifier
  * @see Number
+ * @see Identifiable
  */
 public class IntegerId extends Number implements Identifier<Integer> {
     private final int value;
@@ -30,6 +30,9 @@ public class IntegerId extends Number implements Identifier<Integer> {
      * Constructs a new IntegerId with the specified integer value.
      *
      * @param value the integer value to use as identifier
+     *
+     * @author LeyCM
+     * @since 1.0.0
      */
     public IntegerId(int value) {
         this.value = value;
@@ -39,6 +42,10 @@ public class IntegerId extends Number implements Identifier<Integer> {
      * Returns the original integer value that this identifier represents.
      *
      * @return the integer value wrapped by this identifier
+     *
+     * @author LeyCM
+     * @since 1.0.0
+     * @see Identifier#original()
      */
     @Override
     public Integer original() {
@@ -53,18 +60,25 @@ public class IntegerId extends Number implements Identifier<Integer> {
      *         identifier's value is less than, equal to, or greater than
      *         the specified integer
      * @throws NullPointerException if the specified Integer is null
+     *
+     * @author LeyCM
+     * @since 1.0.0
+     * @see Comparable#compareTo(Object)
      */
     @Override
     public int compareTo(@NotNull Integer o) {
         return Integer.compare(value, o);
     }
 
-
     /**
      * Returns the value of this IntegerId as an {@code int}.
      *
      * @return the numeric value represented by this object after conversion
      *         to type {@code int}
+     *
+     * @author LeyCM
+     * @since 1.0.0
+     * @see Number#intValue()
      */
     @Override
     public int intValue() {
@@ -76,6 +90,10 @@ public class IntegerId extends Number implements Identifier<Integer> {
      *
      * @return the numeric value represented by this object after conversion
      *         to type {@code long}
+     *
+     * @author LeyCM
+     * @since 1.0.0
+     * @see Number#longValue()
      */
     @Override
     public long longValue() {
@@ -87,6 +105,10 @@ public class IntegerId extends Number implements Identifier<Integer> {
      *
      * @return the numeric value represented by this object after conversion
      *         to type {@code float}
+     *
+     * @author LeyCM
+     * @since 1.0.0
+     * @see Number#floatValue()
      */
     @Override
     public float floatValue() {
@@ -98,6 +120,10 @@ public class IntegerId extends Number implements Identifier<Integer> {
      *
      * @return the numeric value represented by this object after conversion
      *         to type {@code double}
+     *
+     * @author LeyCM
+     * @since 1.0.0
+     * @see Number#doubleValue()
      */
     @Override
     public double doubleValue() {
@@ -111,6 +137,10 @@ public class IntegerId extends Number implements Identifier<Integer> {
      *
      * @param obj the object to compare with
      * @return {@code true} if the objects are equal, {@code false} otherwise
+     *
+     * @author LeyCM
+     * @since 1.0.0
+     * @see Object#equals(Object)
      */
     @Override
     public boolean equals(Object obj) {
@@ -124,6 +154,10 @@ public class IntegerId extends Number implements Identifier<Integer> {
      * Returns a hash code value for this IntegerId.
      *
      * @return a hash code value based on the integer value
+     *
+     * @author LeyCM
+     * @since 1.0.0
+     * @see Object#hashCode()
      */
     @Override
     public int hashCode() {
@@ -134,6 +168,10 @@ public class IntegerId extends Number implements Identifier<Integer> {
      * Returns a string representation of this IntegerId.
      *
      * @return a string representation of the integer value
+     *
+     * @author LeyCM
+     * @since 1.0.0
+     * @see Object#toString()
      */
     @Override
     public String toString() {

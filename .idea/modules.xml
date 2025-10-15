@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rub-api/net.rubrion.common.rub-common.api.main.iml" filepath="$PROJECT_DIR$/.idea/modules/rub-api/net.rubrion.common.rub-common.api.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rub-api/net.rubrion.common.rub-common.api.test.iml" filepath="$PROJECT_DIR$/.idea/modules/rub-api/net.rubrion.common.rub-common.api.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rub-common.iml" filepath="$PROJECT_DIR$/.idea/modules/rub-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rub-api/rub-common.api.iml" filepath="$PROJECT_DIR$/.idea/modules/rub-api/rub-common.api.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/rub-api/rub-common.api.main.iml" filepath="$PROJECT_DIR$/.idea/modules/rub-api/rub-common.api.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rub-api/rub-common.api.test.iml" filepath="$PROJECT_DIR$/.idea/modules/rub-api/rub-common.api.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/rub-common/rub-common.common.iml" filepath="$PROJECT_DIR$/.idea/modules/rub-common/rub-common.common.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/rub-common/rub-common.common.main.iml" filepath="$PROJECT_DIR$/.idea/modules/rub-common/rub-common.common.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/rub-common/rub-common.common.test.iml" filepath="$PROJECT_DIR$/.idea/modules/rub-common/rub-common.common.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rub-common.main.iml" filepath="$PROJECT_DIR$/.idea/modules/rub-common.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rub-common.test.iml" filepath="$PROJECT_DIR$/.idea/modules/rub-common.test.iml" />
     </modules>
   </component>
 </project>

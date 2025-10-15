@@ -18,10 +18,10 @@ import org.jetbrains.annotations.NotNull;
  * {@link Number} for numeric operations.
  *
  * @author LeyCM
- * @version 1.0.0
  * @since 1.0.0
  * @see Identifier
  * @see Number
+ * @see Identifiable
  */
 public class LongId extends Number implements Identifier<Long> {
     private final long value;
@@ -30,6 +30,9 @@ public class LongId extends Number implements Identifier<Long> {
      * Constructs a new LongId with the specified long value.
      *
      * @param value the long value to use as identifier
+     *
+     * @author LeyCM
+     * @since 1.0.0
      */
     public LongId(long value) {
         this.value = value;
@@ -39,6 +42,10 @@ public class LongId extends Number implements Identifier<Long> {
      * Returns the original long value that this identifier represents.
      *
      * @return the long value wrapped by this identifier
+     *
+     * @author LeyCM
+     * @since 1.0.0
+     * @see Identifier#original()
      */
     @Override
     public Long original() {
@@ -53,18 +60,28 @@ public class LongId extends Number implements Identifier<Long> {
      *         identifier's value is less than, equal to, or greater than
      *         the specified long
      * @throws NullPointerException if the specified Long is null
+     *
+     * @author LeyCM
+     * @since 1.0.0
+     * @see Comparable#compareTo(Object)
      */
     @Override
     public int compareTo(@NotNull Long o) {
         return Long.compare(value, o);
     }
 
-
     /**
-     * Returns the value of this IntegerId as an {@code int}.
+     * Returns the value of this LongId as an {@code int}.
+     * Note: This may result in loss of precision for large long values.
      *
      * @return the numeric value represented by this object after conversion
      *         to type {@code int}
+     * @throws ArithmeticException if the long value exceeds int range
+     *
+     * @author LeyCM
+     * @since 1.0.0
+     * @see Number#intValue()
+     * @see Math#toIntExact(long)
      */
     @Override
     public int intValue() {
@@ -72,10 +89,14 @@ public class LongId extends Number implements Identifier<Long> {
     }
 
     /**
-     * Returns the value of this IntegerId as a {@code long}.
+     * Returns the value of this LongId as a {@code long}.
      *
      * @return the numeric value represented by this object after conversion
      *         to type {@code long}
+     *
+     * @author LeyCM
+     * @since 1.0.0
+     * @see Number#longValue()
      */
     @Override
     public long longValue() {
@@ -83,10 +104,15 @@ public class LongId extends Number implements Identifier<Long> {
     }
 
     /**
-     * Returns the value of this IntegerId as a {@code float}.
+     * Returns the value of this LongId as a {@code float}.
+     * Note: This may result in loss of precision for large long values.
      *
      * @return the numeric value represented by this object after conversion
      *         to type {@code float}
+     *
+     * @author LeyCM
+     * @since 1.0.0
+     * @see Number#floatValue()
      */
     @Override
     public float floatValue() {
@@ -94,10 +120,15 @@ public class LongId extends Number implements Identifier<Long> {
     }
 
     /**
-     * Returns the value of this IntegerId as a {@code double}.
+     * Returns the value of this LongId as a {@code double}.
+     * Note: This may result in loss of precision for very large long values.
      *
      * @return the numeric value represented by this object after conversion
      *         to type {@code double}
+     *
+     * @author LeyCM
+     * @since 1.0.0
+     * @see Number#doubleValue()
      */
     @Override
     public double doubleValue() {
@@ -105,38 +136,50 @@ public class LongId extends Number implements Identifier<Long> {
     }
 
     /**
-     * Compares this IntegerId with the specified object for equality.
-     * Returns true only if the specified object is also an IntegerId
-     * and has the same integer value.
+     * Compares this LongId with the specified object for equality.
+     * Returns true only if the specified object is also a LongId
+     * and has the same long value.
      *
      * @param obj the object to compare with
      * @return {@code true} if the objects are equal, {@code false} otherwise
+     *
+     * @author LeyCM
+     * @since 1.0.0
+     * @see Object#equals(Object)
      */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
-        IntegerId integerId = (IntegerId) obj;
-        return value == integerId.intValue();
+        LongId longId = (LongId) obj;
+        return value == longId.value;
     }
 
     /**
-     * Returns a hash code value for this IntegerId.
+     * Returns a hash code value for this LongId.
      *
-     * @return a hash code value based on the integer value
+     * @return a hash code value based on the long value
+     *
+     * @author LeyCM
+     * @since 1.0.0
+     * @see Object#hashCode()
      */
     @Override
     public int hashCode() {
-        return Integer.hashCode((int) value);
+        return Long.hashCode(value);
     }
 
     /**
-     * Returns a string representation of this IntegerId.
+     * Returns a string representation of this LongId.
      *
-     * @return a string representation of the integer value
+     * @return a string representation of the long value
+     *
+     * @author LeyCM
+     * @since 1.0.0
+     * @see Object#toString()
      */
     @Override
     public String toString() {
-        return Integer.toString((int) value);
+        return Long.toString(value);
     }
 }

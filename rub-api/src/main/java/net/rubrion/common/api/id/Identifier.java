@@ -20,9 +20,9 @@ import org.jetbrains.annotations.NotNull;
  * @param <Ob> the type of the original object being identified
  *
  * @author LeyCM
- * @version 1.0.0
- * @since 1.0.0
+ * @since 1.0.1
  * @see Comparable
+ * @see Identifiable
  */
 public interface Identifier<Ob> extends Comparable<Ob> {
 
@@ -31,6 +31,9 @@ public interface Identifier<Ob> extends Comparable<Ob> {
      * This is typically the underlying value that the identifier wraps.
      *
      * @return the original object, implementation specific whether null is allowed
+     *
+     * @author LeyCM
+     * @since 1.0.1
      */
     Ob original();
 
@@ -43,6 +46,10 @@ public interface Identifier<Ob> extends Comparable<Ob> {
      *         is less than, equal to, or greater than the specified identifier
      * @throws NullPointerException if the specified identifier is null
      * @throws ClassCastException if the original objects are not mutually comparable
+     *
+     * @author LeyCM
+     * @since 1.0.1
+     * @see #compareTo(Object)
      */
     default int compareTo(@NotNull Identifier<Ob> identifier) {
         return compareTo(identifier.original());
@@ -55,6 +62,10 @@ public interface Identifier<Ob> extends Comparable<Ob> {
      * @param identifier the identifier to compare with for equality
      * @return {@code true} if this identifier is equal to the specified identifier,
      *         {@code false} otherwise
+     *
+     * @author LeyCM
+     * @since 1.0.1
+     * @see Object#equals(Object)
      */
     default boolean equals(Identifier<Ob> identifier) {
         return compareTo(identifier) == 0;
