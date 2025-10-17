@@ -2,6 +2,7 @@ import java.net.URL
 import java.nio.file.Files
 
 dependencyResolutionManagement {
+    @Suppress("UnstableApiUsage")
     repositories {
         mavenCentral()
         maven("https://rubrionmc.github.io/repository/")
@@ -18,6 +19,8 @@ dependencyResolutionManagement {
 
             println("Load global libs.versions.toml...")
             localFile.parentFile.mkdirs()
+
+            @Suppress("DEPRECATION")
             URL(remoteUrl).openStream().use { input ->
                 Files.copy(input, localFile.toPath())
             }
